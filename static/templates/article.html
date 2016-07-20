@@ -1,0 +1,68 @@
+
+
+{% extends 'base.html' %}
+
+{% block 'content' %}
+
+<link href="../../static/css/spore-font.css" rel="stylesheet" />
+<link href="../../static/css/animate.css" rel="stylesheet" />
+<link href="../../static/css/spore-animate.css" rel="stylesheet" />
+
+
+<div style= "height:100px;">
+
+        <div style = "font-size:30px;text-align:center;margin-top:60px;" >{{ datac.titlea }}</div>
+
+
+
+                	<div id="A3-left-date-1" style = "text-align:center;margin-top:25px;font-size:30px;margin-bottom:-60px;">{{datac.date_created |date:'Y-M-d' }}</div>
+
+        </div>
+</div>
+
+
+<div id="wrapper-A3" class="object">
+
+    	<div id="A3-top" >
+			<div style = "margin-left:auto;margin-right:auto;width:500px;"><img src="{{ datac.picture.url }}"  alt="post an image with animation" title="post an image with animation" / width="500px;"></div>
+        </div>
+
+
+
+        <div style = "margin-top:40px;text-align:left;font-size:18px;line-height:25px;width:75%;margin-left:auto;margin-right:auto">
+
+			{{ datac.message | safe }}
+    </div>
+        </div>
+
+
+</div>
+
+
+
+<div id="A4" class="object">
+
+	<div id="wrapper-A4" class="text-part-A5">
+
+    <div id="line1-A4"></div>
+    <div id="line2-A4"></div>
+
+    <ul>
+
+		{% if previous %}
+
+		<li><div id="A4-nextpage-1"><a href="/article/{{previous}}">&#171;&nbsp;&nbsp;Previous page</a></div></li>
+		{% endif %}
+		{% if nexta %}
+		<li><div id="A4-nextpage-2"><a href="/article/{{nexta }}">Next page&nbsp;&nbsp;&#187;</a></div></li>
+		{% endif %}
+		</ul>
+
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}

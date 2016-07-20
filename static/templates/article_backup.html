@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div id="A2">
+
+        <div id="text-2">{{ datac }}</div>
+
+        <div id="wrapper-A2-date-1">
+
+                <div id="A2-date-1">{{datac.date_created |date:'Y-M-d' }}</div>
+                <div id="A2-icone-1"></div>
+                <div id="A2-icone-eye-1"></div>
+        </div>
+</div>
+
+
+<div id="wrapper-A3" class="object">
+
+    	<div id="A3-top">
+			<div id="A3-image"><img src="{{ datac.picture.url }}"  alt="post an image with animation" title="post an image with animation" /></div>
+        </div>
+
+        <div id="A3-top-2" class="wow fadeInY" datac-wow-offset="10">
+
+
+
+			{{ datac.message | safe }}
+
+        </div>
+
+
+</div>
+
+
+
+<div id="A4" class="object">
+
+	<div id="wrapper-A4" class="text-part-A5">
+
+    <div id="line1-A4"></div>
+    <div id="line2-A4"></div>
+
+    <ul>
+
+		{% if previous %}
+
+		<li><div id="A4-nextpage-1"><a href="/article/{{previous}}">&#171;&nbsp;&nbsp;Previous page</a></div></li>
+		{% endif %}
+		{% if nexta %}
+		<li><div id="A4-nextpage-2"><a href="/article/{{nexta }}">Next page&nbsp;&nbsp;&#187;</a></div></li>
+		{% endif %}
+		</ul>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

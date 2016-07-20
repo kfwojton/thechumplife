@@ -1,0 +1,10 @@
+#!/Users/kevinwojton/Hack/thechumplife/myenv/bin/python2.7
+# EASY-INSTALL-ENTRY-SCRIPT: 'newrelic==2.44.0.36','console_scripts','newrelic-admin'
+__requires__ = 'newrelic==2.44.0.36'
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.exit(
+        load_entry_point('newrelic==2.44.0.36', 'console_scripts', 'newrelic-admin')()
+    )

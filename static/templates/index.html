@@ -1,0 +1,38 @@
+
+
+{% extends 'base.html' %}
+
+{% block 'content' %}
+
+<div id="A2">
+
+    <div id="text-2" class="wow fadeIn" data-wow-offset="10"> We all work a ton. It doesn't have to be that way. <br> You can work less and retire early just by making slight changes in your day to day life. We teach you how by leveraging <span style="color:#999;"> technology </span> and understanding <span style="color:#999;"> economics </span> . </div>
+
+</div>
+
+<!-- PART 3 - PORTFOLIO ARTICLES 3 GRID -->
+
+<div id="wrapper-A3" class="object">
+{% for ab in data %}
+	<div id="A3-left">
+
+			<div id="wrapper-post1" class="text-part-A5">
+				<div id="A3-left-image-2"><img src="{{ab.picture.url}}"/></div></a>
+
+					<div id="wrapper-A3-left-date-1">
+						<div id="A3-left-date-1"> {{ab.date_created}}</div>
+							<div id="A3-left-icone-1"></div>
+					</div>
+					<ul>
+						<li><div id="A3-left-title-1"><a href="/article/{{ ab.id }}">{{ ab.titlea }}</a></div></li>
+					</ul>
+						<div id="A3-left-text-1"> {{ab.message | striptags | slice:":170"}}...</div>
+				</div>
+
+
+
+        </div>
+
+{% endfor %}
+
+{% endblock %}
